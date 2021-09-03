@@ -12,8 +12,6 @@ In Canvas, submit a link to your GitHub repository.
 
 * All files have web-appropriate names (no spaces; use dash or underscore), and appropriate extensions (`\*.htm`, `\*.html`, `\*.css`, etc.)
 
-* Three separate HTML pages, including `index.html`. Home page MUST be named `index.htm` or `index.html` (Either extension is fine for HTML files.)
-
 * All pages have a common nav bar (on the top or left) that links the three pages. Pages use the same base style sheet(s), and have a common look and feel.
 
 * One page shows user information (should be fake), showing name, country or origin, birthdate, age, email address (clickable `mailto:` link that opens an email browser!), and a (fake) profile picture of the (fake) user. See https://randomuser.me for examples.
