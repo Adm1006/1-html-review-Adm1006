@@ -26,4 +26,4 @@ Created() {
     }
 }
   
-Vue.createApp(RandPerson).mount('#InfoApp');
+Vue.createApp(RandPerson).mount('#personApp');
