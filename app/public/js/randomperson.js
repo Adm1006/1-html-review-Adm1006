@@ -22,7 +22,7 @@ created() {
         .then((parsedJson) => {
             console.log(parsedJson);
             this.person = parsedJson.results[0]
-            this.picture = this.person.picture.medium
+            this.picture = this.person.picture.large
             this.address = this.person.location.street.number + this.person.location.street.name
         })
         .catch( err => {
