@@ -2,7 +2,10 @@ const RandPerson = {
     data() {
       return {
         "person": {
-            name: {}
+            name:{},
+            picture:{},
+            dob:{},
+            location:{},
         },
              }
     },
@@ -13,7 +16,7 @@ computed: {
     }
 },
 
-Created() {
+created() {
     fetch('https://randomuser.me/api/')
         .then(response => response.json())
         .then((parsedJson) => {
