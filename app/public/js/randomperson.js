@@ -10,11 +10,6 @@ const RandPerson = {
              }
     },
 
-computed: {
-    prettyBirthday() {
-        return dayjs(this.person.dob.date).format('D MMM YYYY');
-    }
-},
 
 created() {
     fetch('https://randomuser.me/api/')
@@ -28,7 +23,14 @@ created() {
         .catch( err => {
             console.error(err)
         })
-    }
+    },
+
+    computed: {
+        prettyBirthday() {
+            return dayjs(this.person.dob.date).format('D MMM YYYY');
+        }
+    },
 }
+
   
 Vue.createApp(RandPerson).mount('#RandPersonApp');
