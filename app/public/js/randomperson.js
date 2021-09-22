@@ -1,7 +1,9 @@
 const RandPerson = {
     data() {
       return {
-        "person": {},
+        "person": {
+            name: {}
+        },
              }
     },
 
