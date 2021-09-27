@@ -31,3 +31,6 @@ foreach ($arr2 as $key => $val) {
     echo "<li>".$key."is".$val."</li>\n;
 }
 echo "</ul>";
+
+
+echo json_encode($arr);
