@@ -10,11 +10,11 @@ echo $num*$foo*$bar;
 
 $arr = [1,1,2,3,5,8];
 
-$arr2 = [
-    "first" => "Tom"
-    "second"=> "Bipin"
-    "best"  => "DS"
-]
+ $arr2 = [
+     "first" => "Tom",
+     "second"=> "Bipin", 
+     "best"  => "DS"
+ ];
 
 if (true) {
     echo "TRUE \n";
