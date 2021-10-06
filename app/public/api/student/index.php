@@ -6,14 +6,14 @@ require 'class/DbConnection.php';
 $db = DbConnection::getConnection();
 
 // Step 2: Create & run the query
-$sql = 'SELECT * FROM student';
+$sql = 'SELECT * FROM offer';
 $vars = [];
 
-// if (isset($_GET['guid'])) {
+ if (isset($_GET['books'])) {
 //   // This is an example of a parameterized query
-//   $sql = 'SELECT * FROM Patient WHERE patientGuid = ?';
-//   $vars = [ $_GET['guid'] ];
-// }
+  $sql = 'SELECT * FROM books WHERE bookId = ?';
+   $vars = [ $_GET['student'] ];
+ }
 
 $stmt = $db->prepare($sql);
 $stmt->execute($vars);
