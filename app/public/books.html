@@ -46,99 +46,44 @@
           <td>{{ book.yearPublished }}</td>
           <td>{{ book.publisher }}</td>
           <td>{{ book.pagecount }}</td>
-          <td>{{ prettyDollar(book.MSRP) }}</td>
+          <td>{{ book.MSRP }}</td>
         </tr>
       </table>
-  </div>
-
-
-  <!-- Bootstrap table (old table) -->
-
-  <!--
-<table id="taskTable" class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Title</th>
-      <th scope="col">Author</th>
-      <th scope="col">Year Published</th>
-      <th scope="col">Publisher</th>
-      <th scope="col">Page Count</th>
-      <th scope="col">MSRP</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Piano Concerto No. 2</td>
-      <td>Rachmaninoff</td>
-      <td>1901</td>
-      <td>Henle</td>
-      <td>87</td>
-      <td>$13</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Turkish March</td>
-      <td>Mozart</td>
-      <td>1768</td>
-      <td>Schirmer</td>
-      <td>6</td>
-      <td>$9</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Ballade No. 1</td>
-      <td>Chopin</td>
-      <td>1836</td>
-      <td>Alfred Publishing</td>
-      <td>24</td>
-      <td>$11</td>
-    </tr>
-    <tr>
-      <th scope="row">4</th>
-      <td>Tempest Sonata</td>
-      <td>Beethoven</td>
-      <td>1824</td>
-      <td>Barnouse</td>
-      <td>55</td>
-      <td>$12</td>
-    </tr>
-  </tbody>
-</table>
--->
 
 <h2 id="format1">ADD A REQUEST BELOW:</h2>
 <title>Add Book Below:</title>
+
   <!-- Bootstrap form -->
-<form>
+<form v-on:submit.prevent="postNewBook">
   <div class="mb-3">
     <label for="exampleInputtitle" class="form-label">Title</label>
-    <input type="Title" class="form-control" id="exampleInputTitle">
+    <input type="text" v-model="bookForm.title" class="form-control" id="exampleInputTitle">
   </div>
   <div class="mb-3">
     <label for="exampleInputAuthor" class="form-label">Author</label>
-    <input type="Title" class="form-control" id="exampleAuthor">
+    <input type="text" v-model="bookForm.author" class="form-control" id="exampleAuthor">
   </div>
   <div class="mb-3">
     <label for="exampleInputYearPublished" class="form-label">Year Published</label>
-    <input type="Title" class="form-control" id="exampleInputYearPublished">
+    <input type="text" v-model="bookForm.yearPublished" class="form-control" id="exampleInputYearPublished">
   </div>
     <div class="mb-3">
     <label for="exampleInputPublisher" class="form-label">Publisher</label>
-    <input type="Title" class="form-control" id="exampleInputPublisher">
+    <input type="text" v-model="bookForm.publisher" class="form-control" id="exampleInputPublisher">
   </div>
     <div class="mb-3">
     <label for="exampleInputPagecount" class="form-label">Page Count</label>
-    <input type="Title" class="form-control" id="exampleInputPageCount">
+    <input type="text" v-model="bookForm.pagecount" class="form-control" id="exampleInputPageCount">
   </div>
   <div class="mb-3">
     <label for="exampleInputMSRP" class="form-label">MSRP</label>
-    <input type="Title" class="form-control" id="exampleInputMSRP">
+    <input type="text" v-model="bookForm.MSRP" class="form-control" id="exampleInputMSRP">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+</div>
 <!---- table source plug in from: http://tristen.ca/tablesort/demo/ -->
 
     <!--

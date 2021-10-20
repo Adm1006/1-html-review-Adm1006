@@ -2,6 +2,8 @@ const SomeApp = {
     data() {
       return {
         books: [],
+        bookForm: {},
+        selectedBook: null
       }
     },
     computed: {},
@@ -20,10 +22,36 @@ const SomeApp = {
             .catch( (err) => {
                 console.error(err);
             })
-        }
-    },
-    created() {
-        this.fetchBooksData();
+        },
+
+        postNewBook(evt) {
+            //this.bookForm.Id = this.selectedbook.id;        
+            console.log("Posting!", this.bookForm);
+    
+            fetch('api/books/create.php', {
+                method:'POST',
+                body: JSON.stringify(this.bookForm),
+                headers: {
+                  "Content-Type": "application/json; charset=utf-8"
+                }
+              })
+              .then( response => response.json() )
+              .then( json => {
+                console.log("Returned from post:", json);
+                // TODO: test a result was returned!
+                this.books = json;
+                
+                // reset the form
+                this.bookForm = {};
+              });
+            },
+            handleResetBook(){
+                this.selectedBook = null;
+                this.bookForm = {};
+            }
+        },
+        created() {
+            this.fetchBooksData();
     }
   
   }
